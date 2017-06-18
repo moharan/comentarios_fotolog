@@ -2,24 +2,41 @@
 function guardar() {
 	var button = document.getElementById("guardar");
 	button.addEventListener("click", guardarDatos);
-	guardarDatos();
+	//guardarDatos();
 };
 
 function guardarDatos() {
-	var nombre = document.getElementById("nombre").value;
-	var comentario = document.getElementById("comentario").value;
-	// recorre los datos de el formulario
-	sessionStorage.setItem(nombre, comentario);
-
-	var contenedor = document.getElementById("ale");
-	contenedor.innerHTML = " ";
-	for (var i = 0; i < sessionStorage.length; i++) {
-		// devuelve el (numero) de tu key (Application)
-		var kei = sessionStorage.key(i);
-		var valuee = sessionStorage.getItem(kei);
-		// = si solo escribo =, se sobreescribe USAR (+=)
-		contenedor.innerHTML += "<p>" + kei + " " + valuee + "</p>";
+	//datos ingresados
+	localStorage.nombre = document.getElementById("nombre").value;
+	localStorage.comentario = document.getElementById("comentario").value;
+	// validar
+	if((localStorage.nombre !== undefined ) && (localStorage.comentario !== undefined)) {
+	 //contenedor del html, y los datos a imprimir
+		var containerPosteos = document.getElementById("ale");
+		// Es el elemento que creamos. Es donde irá nuestro post
+		var nuevoPost = document.createElement("div");
+		// Ahora veamos donde metemos esos valores
+		var contenedorNombre = document.createElement("h3");
+		var contenedorPost = document.createElement("p");
+		// Ahora hay que transformar el nombre a nodo de texto
+		var nodoNombre = document.createTextNode(localStorage.nombre);
+		var nodoPosteo = document.createTextNode(localStorage.comentario);
+		// Ahora metemos esos nodos de texto a los elementos que ya creamos
+		contenedorNombre.appendChild(nodoNombre);
+		contenedorPost.appendChild(nodoPosteo);
+		// Ahora agregamos el nombre y el contenido del posteo al post
+		nuevoPost.appendChild(contenedorNombre);
+		nuevoPost.appendChild(contenedorPost);
+		// Finalmente, le damos atributos a nuestro post y lo metemos en el contenedor de posteos
+		nuevoPost.setAttribute("class", "ale2");
+		containerPosteos.appendChild(nuevoPost);
+	// limpia value para seguir completando el formulario
+	document.getElementById("nombre").value = "";
+	document.getElementById("comentario").value = "";	
 	}
+	else {
+		document.getElementById("aviso").innerHTML += "No has introducido tu nombre y tu comentario";
+	}	
 };
 
 function limpiar() {
@@ -29,8 +46,8 @@ function limpiar() {
 };
 
 function limpiarDatos() {
-	alert("En algun momento borrara los datos");
-}
-
-guardar();
-limpiar();
+    // remueve todo
+    document.querySelectorAll(".ale2").forEach(function(e) {
+        e.remove()
+    });
+};
