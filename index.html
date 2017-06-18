@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>FOTOLOG - ..::ÁrÉnItÁ .´´´ ÁmíGáS x CrÉw::..</title>
+	<title>FOTOLOG - Escena Chilena del ROCK</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -20,29 +20,29 @@
 	<section id="bannerflog">
 		<div class="container">
 			<div class="col-md-12 text-center">
-				<h1>..::ÁrÉnItÁ .´´´ ÁmíGáS x CrÉw::..</h1>
+				<h1>Metal</h1>
 			</div>
 		</div>
 	</section>
 	<section id="contenido">
 		<div class="container">
 			<div class="col-md-2 recientes">
-				<a href="" class="fotos">Fotos Recientes</a>
-				<img src="img/jarcor.jpg">
-				<img src="img/foto_0920140822124434.jpg" alt="">
-				<img src="img/i-62869.jpeg" alt="">
-				<img src="img/p3.jpg" alt="">
+				<div class="fotos"><a href="#">Fotos De Bandas</a></div>
+				<img src="https://i.ytimg.com/vi/BHud4xGmxMM/maxresdefault.jpg" alt="Down">
+				<img src="http://www.invisibleoranges.com/files/2013/07/morbid-angel.jpg" alt="Morbid Angel">
+				<img src="https://www.metal-archives.com/images/1/5/1/151_photo.jpg?1327" alt="My Dyng Bride">
+				<img src="https://img.discogs.com/g9E_JGPILvxlofbL89PND7JvZH0=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/A-261540-1461767434-6034.jpeg.jpg" alt="Brujeria">
 			</div>
 			<div class="col-md-8">
-				<img src="img/m1_768_11MS.jpg" alt="">
-				<p>AqUi EStAáá Mi AmIgA ArEnItAáÁÁ</p>
+				<img src="http://metalworks.co/wp-content/uploads/2012/10/HATE-Los-death-metaleros-polacos-terminan-grabaci%C3%B3n-de-su-nuevo-%C3%A1lbum-MetalWorks.co_.jpg" alt="publico">
+				<p>Line UP</p>
 			</div>
 			<div class="col-md-2 recientes">
-				<a href="" class="fotos">Fotos Recientes</a>
-				<img src="img/jarcor.jpg">
-				<img src="img/foto_0920140822124434.jpg" alt="">
-				<img src="img/i-62869.jpeg" alt="">
-				<img src="img/p3.jpg" alt="">
+				<div class="fotos"><a href="#">Fotos De Bandas</a></div>
+				<img src="http://www.metal-rules.com/zine/images/stories/Interviews/NILE/2007/nile-5.jpg" alt="Nile">
+				<img src="https://www.metal-archives.com/images/9/5/1/2/9512_photo.jpg?1514" alt="Sadism">
+				<img src="http://images.meteociel.fr/im/3964/atomic_aggressor_bic2.jpg" alt="Atomic aggressor">
+				<img src="https://www.metal-archives.com/images/2/8/4/0/28404_photo.jpg?2015" alt="Melektaus">
 			</div>
 		</div>
 	</section>
@@ -51,15 +51,33 @@
 			<div class="row">
 				<div class="col-md-offset-3 col-md-6">
 					<form Name="formulario">
-						<h3>Nombre</h3>
-						<input type="text" id="clave">
-						<h3>Comentario</h3>
-						<textarea id="valor"></textarea>
+						<h3 class="form">Nombre</h3>
+						<input type="text" id="nombre">
+						<h3 class="form">Comentario</h3>
+						<textarea id="comentario"></textarea>
 					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6 text-center">
+					<button type="button" class="btn btn-primary" onclick="agregarComentario()" value="Agregar Comentario">Guardar</button>
+					<button type="button" class="btn btn-primary" onclick="agregarComentario()" value="Agregar Comentario">Limpiar Datos</button>
+				</div>
+				<div class="col-lg-6 text-center">
+					
 				</div>
 			</div>
 		</div>
 	</section>
+	<!-- Feedback de datos mal ingresados-->
+	<section class="container">
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<div id="aviso">feedback</div>
+			</div>
+		</div>
+	</section>
+	<!-- div que se crea -->
 	<section class="container">
 		<div class="row">
 			<div class="col-md-offset-3 col-md-6">
