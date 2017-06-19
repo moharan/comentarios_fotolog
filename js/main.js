@@ -1,7 +1,7 @@
 //alert("existe");
 function guardar() {
 	var button = document.getElementById("guardar");
-	button.addEventListener("click", guardarDatos);
+	button.addEventListener("click", pre);
 	guardarDatos();
 };
 
@@ -10,15 +10,18 @@ function borrar() {
 	document.getElementById("nombre").value = "";
 	document.getElementById("comentario").value = "";
 }
-
-function guardarDatos() {
+function pre() {
 	var nombre = document.getElementById("nombre").value;
 	var comentario = document.getElementById("comentario").value;
 	// recorre los datos de el formulario
 	localStorage.setItem(nombre,comentario);
+	guardarDatos();
+}
+
+function guardarDatos() {
 	var estructura = document.getElementById("ale");
 	//?????
-	estructura.innerHTML = " ";
+	estructura.innerHTML = "";
 	for (var i = 0; i < localStorage.length; i++) {
 		// devuelve el (numero) de tu key (Application)
 		var kei = localStorage.key(i);
@@ -41,7 +44,7 @@ function guardarDatos() {
 		// Finalmente, le damos atributos a nuestro post y lo metemos en el contenedor de posteos
 		nuevoPost.setAttribute("class", "ale2");
 		estructura.appendChild(nuevoPost);
-		borrar();
+		//borrar();
 	}
 
 };
